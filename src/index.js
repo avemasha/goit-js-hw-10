@@ -18,7 +18,7 @@ inputCountryName.addEventListener(
     let name = event.target.value;
     clearData()
     if (name.length === 0){
-        return
+        return;
     }
 
     fetchCountries(name)
@@ -35,11 +35,11 @@ inputCountryName.addEventListener(
   }
 
   function renderCountriesList(countries){
-    if (countries.length >10){
+    if (countries.length > 10){
         Notify.info ('Too many matches found. Please enter a more specific name');
-        return
+        return;
     }
-    updateCountryData(countries)
+    updateCountryData(countries);
   }
 
  function updateCountryData(countries){
@@ -69,7 +69,7 @@ if (countries.length === 1){
           <img src="${country.flags.svg}" alt="${country.name.official}" width="200">
             <p><b>Name</b>: ${country.name.official}</p>
             <p><b>Capital</b>: ${country.capital}</p>
-            <p><b>Languages</b>: ${country.languages}</p>
+            <p><b>Languages</b>: ${languages}</p>
             <p><b>Population</b>: ${country.population}</p>
           </div>`;
       })
