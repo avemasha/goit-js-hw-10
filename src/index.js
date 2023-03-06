@@ -21,7 +21,7 @@ inputCountryName.addEventListener(
         return;
     }
 
-    fetchCountries(name)
+    fetchCountries(name.trim())
     .then(countries => renderCountriesList(countries))
     .catch(error => Notify.failure('Oops, there is no country with that name :('))
 
@@ -49,6 +49,16 @@ if (countries.length === 1){
     countriesList(countries);
 }
   }
+
+  function currentLanguages(languages) {
+    const langs = [];
+    for (let key in languages) {
+      langs.push(languages[key]);
+    }
+    return langs;
+  }
+
+ 
 
   function countriesList(countries){
     const markup = countries
